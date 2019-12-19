@@ -1,1 +1,2 @@
-# Confronto_1---Estrutura_de_dados
+# Confronto 1 - Estrutura de dados
+Integrantes: Paulo Sérgio, Marcio Fernandes
