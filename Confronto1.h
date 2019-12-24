@@ -13,4 +13,6 @@
 
 /* Criar TAD para a fila de processos */
 
+typedef struct fila Fila;
+
 ///////////////////////////////
