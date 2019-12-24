@@ -11,5 +11,6 @@
 
 /* Protótipo das funções da fila de processos - Paulo*/
 
+/* Criar TAD para a fila de processos */
 
 ///////////////////////////////
