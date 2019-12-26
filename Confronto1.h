@@ -17,17 +17,9 @@
 /* Criar TAD para a fila de processos */
 
 typedef struct fila Fila;
-typedef struct nodo Nodo;
+typedef struct processo Processo;
 
-struct nodo {
-	int id;    //ID do processo
-	Nodo *prox;
-};
 
-struct fila {
-	Nodo *inicio;
-	Nodo *fim;
-};
 
 //Criar a fila de processos
 Fila *criaFila();
@@ -36,12 +28,16 @@ Fila *criaFila();
 int vazio(Fila *f);
 
 /* função auxiliar: insere no fim */
-Nodo* insere_fim (Nodo* fim, int id);
+Processo* insere_fim (Processo* fim, int id);
 
 // Função que insere
 void insere (Fila* f, int id);
 
 // Função que retira o processo com maior tempo de espera
-Nodo *retiraProcesso(Fila *f);
+Processo *retiraProcesso(Fila *f);
+
+//Imprime os processos da fila
+void imprimirProcessos(Fila *f);
+
 
 ///////////////////////////////

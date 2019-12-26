@@ -9,7 +9,15 @@
 
 
 /* Implementação das funções da fila de processos - Paulo*/
+struct processo {
+	int id;    //ID do processo
+	Processo *prox;
+};
 
+struct fila {
+	Processo *inicio;
+	Processo *fim;
+};
 
 /* Criar a fila de processos */
 Fila *criaFila(){
@@ -30,8 +38,8 @@ int vazio(Fila *f){
 /* Adicionar processos nela */
 
 /* função auxiliar: insere no fim */
-Nodo* insere_fim (Nodo* fim, int id){
-	Nodo* f = (Nodo*) malloc(sizeof(Nodo));
+Processo* insere_fim (Processo* fim, int id){
+	Processo* f = (Processo*) malloc(sizeof(Processo));
 	f->id = id;
 	f->prox = NULL;
 	
@@ -50,18 +58,32 @@ void insere (Fila* f, int id){
 
 // Função que retira o processo com maior tempo de espera
 
-Nodo *retiraProcesso(Fila *f){
+Processo *retiraProcesso(Fila *f){
 	if(vazio(f) == TRUE)
 		printf("Não há processos ativos no momento!\n");
 	else {
 		int id = f->inicio->id;
 		
-		Nodo *p = f->inicio;
+		Processo *p = f->inicio;
 		free(f->inicio);
 		
 		if (f->inicio == NULL) /* fila ficou vazia? */
-		f->fim = NULL;
+			f->fim = NULL;
 		return p;
+	}
+}
+
+// Imprimir a fila de processos
+
+void imprimirProcessos(Fila *f){
+	if(f->inicio == NULL)
+		printf("Fila vazia!\n");
+	else {
+		Processo *aux = f->inicio;
+		while(aux != NULL){
+			printf("Processo id#%d\n", aux->id);
+			aux = aux->prox;
+		}
 	}
 }
 
