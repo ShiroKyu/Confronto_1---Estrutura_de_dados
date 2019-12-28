@@ -57,24 +57,19 @@ void insere (Fila* f, int id){
 }
 
 // Função que retira o processo com maior tempo de espera
-
-Processo *retiraProcesso(Fila *f){
-	if(vazio(f) == TRUE)
-		printf("Não há processos ativos no momento!\n");
-	else {
-		int id = f->inicio->id;
-		
+void retiraProcesso(Fila *f){
+	if(vazio(f) == TRUE){
+		printf("Fila vaziam não há processos ativos no momento.\n");
+	} else {
 		Processo *p = f->inicio;
-		free(f->inicio);
-		
-		if (f->inicio == NULL) /* fila ficou vazia? */
+		f->inicio = p->prox;
+		free(p);
+		if(f->inicio == NULL) //Fila ficou vazia?
 			f->fim = NULL;
-		return p;
-	}
+		}
 }
 
 // Imprimir a fila de processos
-
 void imprimirProcessos(Fila *f){
 	if(f->inicio == NULL)
 		printf("Fila vazia!\n");
@@ -85,6 +80,18 @@ void imprimirProcessos(Fila *f){
 			aux = aux->prox;
 		}
 	}
+}
+
+//Liberar a fila
+
+void liberar(Fila *f){
+	Processo *p = f->inicio;
+	while(p != NULL){
+		Processo *t = p->prox;
+		free(p);
+		p = t;
+	}
+	free(f);
 }
 
 ///////////////////////////////

@@ -34,10 +34,12 @@ Processo* insere_fim (Processo* fim, int id);
 void insere (Fila* f, int id);
 
 // Função que retira o processo com maior tempo de espera
-Processo *retiraProcesso(Fila *f);
+void retiraProcesso(Fila *f);
 
 //Imprime os processos da fila
 void imprimirProcessos(Fila *f);
 
+// Liberar a fila
+void liberar(Fila *f);
 
 ///////////////////////////////
