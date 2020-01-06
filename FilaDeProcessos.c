@@ -2,7 +2,6 @@
 
 #include "FilaDeProcessos.h"
 
-
 /* Implementação das funções da fila de processos - Paulo*/
 struct processo {
 	int id;    //ID do processo
