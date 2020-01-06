@@ -14,8 +14,6 @@
 typedef struct fila Fila;
 typedef struct processo Processo;
 
-
-
 //Criar a fila de processos
 Fila *criaFila();
 

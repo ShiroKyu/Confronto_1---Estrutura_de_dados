@@ -2,7 +2,9 @@
 /* Disciplina: Estrutura de dados */
 
 #include <locale.h>
+/* Filas de processo - Paulo */
 #include "FilaDeProcessos.h"
+/* Pilha, torres de hanói - Marcio */
 
 int main(){
 	setlocale(LC_ALL,"");
@@ -11,6 +13,7 @@ int main(){
 	
 	/* Criar a fila de processos */
 	Fila *f = criaFila();
+	
 
 	while(opcao != 3){
 		printf("Autores: Paulo Sérgio, Marcio Fernandes\nDisciplina: Estrutura de Dados\nOrientador: André Lira Rolim\n\n");
