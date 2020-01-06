@@ -2,7 +2,7 @@
 /* Disciplina: Estrutura de dados */
 
 #include <locale.h>
-#include "Confronto1.h"
+#include "FilaDeProcessos.h"
 
 int main(){
 	setlocale(LC_ALL,"");
@@ -21,7 +21,8 @@ int main(){
 		printf("[3] - Sair\n"); scanf("%d", &opcao);
 		
 		switch(opcao){
-			case 1:		//Marcio, Torres de Hanói
+			case 1:		//MARCIO, TORRES DE HANÓI
+			
 				break;
 			
 			case 2:		//Paulo, Filas de processo
