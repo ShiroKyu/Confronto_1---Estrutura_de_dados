@@ -43,11 +43,13 @@ Processo* insere_fim (Processo* fim, int id){
 }
 
 // Função que insere
-void insere (Fila* f, int id){
+void insereProcesso (Fila* f, int id){
 	f->fim = insere_fim(f->fim, id); /*Chama a função que insere no fim */
 	
 	if (f->inicio == NULL) /* fila antes vazia? */
 		f->inicio = f->fim;
+	
+	printf("Processo adicionado com sucesso.\n");
 }
 
 // Função que retira o processo com maior tempo de espera
@@ -61,6 +63,7 @@ void retiraProcesso(Fila *f){
 		if(f->inicio == NULL) //Fila ficou vazia?
 			f->fim = NULL;
 		}
+	printf("Processo retirado com sucesso.\n");
 }
 
 // Imprimir a fila de processos
@@ -70,7 +73,7 @@ void imprimirProcessos(Fila *f){
 	else {
 		Processo *aux = f->inicio;
 		while(aux != NULL){
-			printf("Processo id#%d\n", aux->id);
+			printf("Processo ID#%d\n", aux->id);
 			aux = aux->prox;
 		}
 	}

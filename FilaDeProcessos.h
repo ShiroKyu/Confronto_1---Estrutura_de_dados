@@ -24,7 +24,7 @@ int vazio(Fila *f);
 Processo* insere_fim (Processo* fim, int id);
 
 // Função que insere
-void insere (Fila* f, int id);
+void insereProcesso (Fila* f, int id);
 
 // Função que retira o processo com maior tempo de espera
 void retiraProcesso(Fila *f);
