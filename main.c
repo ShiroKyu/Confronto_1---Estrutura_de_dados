@@ -12,7 +12,7 @@ int main(){
 	int opcao2;
 	
 	/* Criar a fila de processos */
-	int id = 0; //IDs dos processos
+	unsigned int id = 0; //IDs dos processos
 	Fila *f = criaFila();
 	
 
@@ -31,6 +31,7 @@ int main(){
 			
 			case 2:		//Paulo, Filas de processo
 				system("cls");
+				opcao2 = 0;
 				while(opcao2 != 4){
 					printf("==== Fila de processos ====\n\n");
 					printf("Escolha o que deseja fazer: \n");
@@ -45,8 +46,7 @@ int main(){
 							insereProcesso(f, id++);
 							break;
 						case 2:
-							system("cls");
-							//retiraProcesso(f);
+							system("cls");				
 							retiraProcesso(f);
 							
 							break;
@@ -54,11 +54,12 @@ int main(){
 							system("cls");
 							imprimirProcessos(f);
 							break;
+						
 						default:
 							system("cls");
 							break;
 					}
-				}
+				} // 3
 				break;
 			
 			case 3:
@@ -67,8 +68,8 @@ int main(){
 				
 			default:
 				break;
-		}
-	}
+		} // 2
+	} // 1
 	
 	system("pause");
 	return 0;

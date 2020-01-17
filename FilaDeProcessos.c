@@ -71,11 +71,13 @@ void imprimirProcessos(Fila *f){
 	if(f->inicio == NULL)
 		printf("Fila vazia!\n");
 	else {
+		int total = 0;
 		Processo *aux = f->inicio;
 		while(aux != NULL){
-			printf("Processo ID#%d\n", aux->id);
+			printf("Processo ID#%d -> ", aux->id);
 			aux = aux->prox;
-		}
+			total++;
+		} printf("\n%d processos no total\n\n",total);
 	}
 }
 
