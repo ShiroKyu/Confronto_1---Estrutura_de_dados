@@ -2,20 +2,30 @@
 /* Disciplina: Estrutura de dados */
 
 #include <locale.h>
-/* Filas de processo - Paulo */
+/* Filas de processo  */
 #include "FilaDeProcessos.h"
-/* Pilha, torres de hanói - Marcio */
+
+/* Pilha, torres de hanói */
+#include "TorreDeHanoi.h"
 
 int main(){
 	setlocale(LC_ALL,"");
-	int opcao;
-	int opcao2;
+	int opcao; //Seleção do 1° menu
+	int opcao2; //Seleção da fila de processos
 	
 	/* Criar a fila de processos */
 	unsigned int id = 0; //IDs dos processos
 	Fila *f = criaFila();
 	
+	/* Varíaveis de controle da Pilha */
+	int remover, adicionar, vencedor = 10;
 
+	Pilha *Pilha1 = CriarPilha();
+	Pilha *Pilha2 = CriarPilha();
+	Pilha *Pilha3 = CriarPilha();  //Cria das 3 pilhas
+
+    iniciar(Pilha1);
+	
 	while(opcao != 3){
 		printf("Autores: Paulo Sérgio, Marcio Fernandes\nDisciplina: Estrutura de Dados\nOrientador: André Lira Rolim\n\n");
 		printf("==== Confronto 1 ====\n\n");
@@ -25,9 +35,35 @@ int main(){
 		printf("[3] - Sair\n"); scanf("%d", &opcao);
 		
 		switch(opcao){
-			case 1:		//MARCIO, TORRES DE HANÓI
+			case 1:		// TORRES DE HANÓI
 			
-				break;
+			while(vencedor != 1){
+        		system("cls");
+				printf("\nTORRE DE HANOI - ESTRUTURA DE DADOS\n\n");
+				printf("OBS: Maiores números correspondem aos maiores discos.\n");
+
+				printf("\nPilha 01 -   "); imprimir(Pilha1);
+				printf("\nPilha 02 -   "); imprimir(Pilha2);
+				printf("\nPilha 03 -   "); imprimir(Pilha3);
+				printf("\n");
+				printf("\nDigite de qual Pilha deseja remover ou digite -1 para voltar: ");
+				scanf("%d", &remover);
+				
+				if(remover == -1){
+					system("cls");
+					break;	
+				}
+				switch(remover){
+					case 1:Transfere(Pilha1, Pilha1, Pilha2, Pilha3); break;
+					case 2:Transfere(Pilha2, Pilha1, Pilha2, Pilha3); break;
+					case 3:Transfere(Pilha3, Pilha1, Pilha2, Pilha3); break;
+					default: break;
+				}
+
+				if(Pilha3->tam == 4)
+            		printf("Voce Venceu! \n");
+			}
+			break;
 			
 			case 2:		//Paulo, Filas de processo
 				system("cls");
@@ -59,17 +95,21 @@ int main(){
 							system("cls");
 							break;
 					}
-				} // 3
+				} 
 				break;
 			
 			case 3:
+				system("cls");
 				liberar(f);
+				liberarPilha(Pilha1);
+				liberarPilha(Pilha2);
+				liberarPilha(Pilha3);
 				break;
 				
 			default:
 				break;
-		} // 2
-	} // 1
+		}
+	} 
 	
 	system("pause");
 	return 0;
