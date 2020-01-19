@@ -88,7 +88,7 @@ void Transfere(Pilha *pilhaSelecionada, Pilha *pilha1, Pilha *pilha2, Pilha *pil
 	int adicionar;
 	Nodo *aux = pilhaSelecionada->topo;
 
-	printf("\nPara qual pilha deseja mover?");
+	printf("\nPara qual pilha deseja mover? ");
 	scanf("%d",&adicionar);
 
     if(pilhaSelecionada->tam != 0){ // se tem algo para mover

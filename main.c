@@ -60,8 +60,10 @@ int main(){
 					default: break;
 				}
 
-				if(Pilha3->tam == 4)
-            		printf("Voce Venceu! \n");
+				if(Pilha3->tam == 4){
+            		printf("Voce Venceu! \n\n");
+            		vencedor = 1;
+				}
 			}
 			break;
 			
@@ -108,9 +110,11 @@ int main(){
 				
 			default:
 				break;
-		}
-	} 
+		
+		} 
+	}
 	
 	system("pause");
 	return 0;
 }
+
